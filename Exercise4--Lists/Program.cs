@@ -7,11 +7,14 @@ class Program
     {
         List<string> fruits = new List<string>();
 
-        fruits.Add("Apple");
-        fruits.Add("Banana");
-        fruits.Add("Mango");
-        fruits.Add("Orange");
+        for (int i = 1; i <= 4; i++)
+        {
+            Console.Write($"Enter fruit #{i}: ");
+            string fruit = Console.ReadLine();
+            fruits.Add(fruit);
+        }
 
+        Console.WriteLine("\nYour fruits are:");
         foreach (string fruit in fruits)
         {
             Console.WriteLine(fruit);
