@@ -4,14 +4,35 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("Enter a number to count up to: ");
-        int limit = int.Parse(Console.ReadLine());
+        string response = "yes";
 
-        for (int i = 1; i <= limit; i++)
+        while (response == "yes")
         {
-            Console.WriteLine(i);
-        }
+            Console.Write("What is the magic number? ");
+            int magicNumber = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Done counting!");
+            Console.Write("What is your guess? ");
+            int guess = int.Parse(Console.ReadLine());
+
+            while (guess != magicNumber)
+            {
+                if (guess < magicNumber)
+                {
+                    Console.WriteLine("Higher");
+                }
+                else
+                {
+                    Console.WriteLine("Lower");
+                }
+
+                Console.Write("What is your guess? ");
+                guess = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("You guessed it!");
+
+            Console.Write("Play again? (yes/no): ");
+            response = Console.ReadLine();
+        }
     }
 }

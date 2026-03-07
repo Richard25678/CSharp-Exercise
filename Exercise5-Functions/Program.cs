@@ -2,21 +2,43 @@ using System;
 
 class Program
 {
-    static int AddNumbers(int a, int b)
+    static void DisplayMessage()
     {
-        return a + b;
+        Console.WriteLine("Welcome to the program!");
+    }
+
+    static string PromptUserName()
+    {
+        Console.Write("Enter your name: ");
+        return Console.ReadLine();
+    }
+
+    static int PromptUserNumber()
+    {
+        Console.Write("Enter your favorite number: ");
+        return int.Parse(Console.ReadLine());
+    }
+
+    static int SquareNumber(int number)
+    {
+        return number * number;
+    }
+
+    static void DisplayResult(string name, int squared)
+    {
+        Console.WriteLine(name + ", the square of your number is " + squared);
     }
 
     static void Main(string[] args)
     {
-        Console.Write("Enter first number: ");
-        int num1 = int.Parse(Console.ReadLine());
+        DisplayMessage();
 
-        Console.Write("Enter second number: ");
-        int num2 = int.Parse(Console.ReadLine());
+        string name = PromptUserName();
 
-        int result = AddNumbers(num1, num2);
+        int number = PromptUserNumber();
 
-        Console.WriteLine("The sum is: " + result);
+        int squared = SquareNumber(number);
+
+        DisplayResult(name, squared);
     }
 }

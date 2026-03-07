@@ -5,19 +5,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> fruits = new List<string>();
+        List<int> numbers = new List<int>();
+        int number = -1;
 
-        for (int i = 1; i <= 4; i++)
+        Console.WriteLine("Enter a list of numbers, type 0 when finished.");
+
+        while (number != 0)
         {
-            Console.Write($"Enter fruit #{i}: ");
-            string fruit = Console.ReadLine();
-            fruits.Add(fruit);
+            Console.Write("Enter number: ");
+            number = int.Parse(Console.ReadLine());
+
+            if (number != 0)
+            {
+                numbers.Add(number);
+            }
         }
 
-        Console.WriteLine("\nYour fruits are:");
-        foreach (string fruit in fruits)
+        int sum = 0;
+
+        foreach (int num in numbers)
         {
-            Console.WriteLine(fruit);
+            sum += num;
         }
+
+        Console.WriteLine("The sum is: " + sum);
     }
 }
